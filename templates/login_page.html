@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+      <div class="items-container">
+    <div class="item">
+        <h1 class="text-center">Login to Your Profile</h1>
+        <form method="POST" action="{% url 'login user' %}">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+{% endblock %}

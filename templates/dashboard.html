@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1 style="color:black;" class="text-center">My Recipes</h1>
+        {% if not recipes %}
+            <h2>There are no recipes</h2>
+            <div class="buttons-container">
+                <a class="button add" href="{%  url 'create recipe' %}">Add A Recipe</a>
+            </div>
+        {% else %}
+        {%  for recipe in recipes %}
+            <div class="items-container">
+            <div class="item">
+                <h2>{{ recipe.title }}</h2>
+                <img class="detail-img" src="{{ recipe.image_url }}" alt="recipe-image">
+                <div class="recipe-info">
+                    <h3>{{ recipe.intro }}</h3>
+                </div>
+                <div class="buttons-container">
+                    <a class="button details" href="{% url 'details recipe' recipe.pk %}">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+
+            </div>
+    {% endif %}
+
+{% endblock %}

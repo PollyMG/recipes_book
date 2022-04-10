@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="items-container">
+    <div class="item">
+         <h1>Add Recipe Comment</h1>
+        <form method="POST" action="">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="Add Comment">
+        </form>
+    </div>
+</div>
+{% endblock %}

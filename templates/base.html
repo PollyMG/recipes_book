@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Recipes_Book</title>
+</head>
+
+<body>
+
+ <nav>
+    <ul>
+        <img src="{% static 'images/chef.png' %}" alt="chef">
+        <li class="title"><a href="{% url 'show index' %}">Recipes Book</a></li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+                    <a href="{% url 'profile details' request.user.id %}">Hello, {{ request.user }}</a>
+                    <a class="nav-link" href="{% url 'profile details' request.user.id %}">Profile</a>
+                    <a class="button add" href="{%  url 'create recipe' %}">Add A Recipe</a>
+                    <a class="nav-link" href="{% url 'logout user' %}">Logout</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+ <link rel="stylesheet" href="{% static 'css/hp_background.css' %}">
+    <div class="container">
+ {% block page_content %}
+{% endblock %}
+    </div>

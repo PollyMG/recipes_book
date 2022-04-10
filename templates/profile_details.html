@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<h1>My Profile</h1>
+    <div class="items-container">
+                <div class="item">
+                <h1>My Profile</h1>
+                    <h5><u>Name:</u> {{ profile.first_name }} {{ profile.last_name }}</h5>
+                    {% if profile.date_of_birth %}
+                        <h5><u>Birthdate:</u> {{ profile.date_of_birth }}</h5>
+                    {% endif %}
+                    {% if profile.email %}
+                        <h5><u>Email:</u> {{ profile.email }}</h5>
+                    {% endif %}
+                    {% if profile.gender %}
+                        <h5><u>Gender:</u> {{ profile.gender }}</h5>
+                    {% endif %}
+                    {% if profile.description %}
+                        <h5><u>Description:</u> {{ profile.description }}</h5>
+                    {% endif %}
+                    {% if profile.picture %}
+                        <h5><u>Picture:</u></h5>
+                        <img class="detail-img" src="{{ profile.picture }}" alt="recipe-image">
+                    {% endif %}
+                <div class="buttons-container">
+                    <a class="button edit" href="{% url 'edit profile' profile.pk %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete profile' profile.pk %}">Delete</a>
+                    <a class="button edit" href="{% url 'change password' %}">Change Your Password</a>
+                </div>
+                </div>
+
+    </div>
+{% endblock %}

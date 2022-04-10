@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+    <div class="items-container">
+    <div class="item">
+        <h1>Delete Your Profile</h1>
+        <h1>Are you sure you want to delete your profile?</h1>
+        <form method="POST" action="">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" class="button delete" value="Delete">
+        </form>
+    </div>
+</div>
+{% endblock %}

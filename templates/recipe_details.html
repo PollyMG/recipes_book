@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+        <div class="items-container">
+            <div class="item">
+            <h1>Recipe Details</h1>
+                <h2>{{ recipe.title }}</h2>
+                <img class="detail-img" src="{{ recipe.image_url }}" alt="recipe-image">
+                <div class="time">
+                    <img src="{% static 'images/clock.png' %}" alt="">
+                    <p>{{ recipe.time_cook }}</p>
+                </div>
+                <h3>How to prepare?</h3>
+                <div class="recipe-info-full">
+                    {{ recipe.description }}
+                    <h4>Comments...</h4>
+                    {% if recipe.comments.all %}
+                        {% for comment in recipe.comments.all %}
+                            <h5><u>{{ comment.user.username }}:</u> {{ comment.body|linebreaks }}</h5>
+                        {% endfor %}
+                    {% else %}
+                        <h6>There are no comments yet...</h6>
+                    {% endif %}
+                </div>
+                <div class="buttons-container">
+                {% if is_owner %}
+                    <a class="button edit" href="{% url 'edit recipe' recipe.pk %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete recipe' recipe.pk %}">Delete</a>
+                {% endif %}
+                    <a class="button edit" href="{% url 'comment recipe' recipe.pk %}">Comment</a>
+                </div>
+            </div>
+        </div>
+{% endblock %}

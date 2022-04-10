@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E402" />
+          <option value="W391" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Polly.single_number" />
+          <option value="int.symmetric_difference" />
+          <option value="project.food" />
+          <option value="project.person" />
+          <option value="project.employee" />
+          <option value="project.vehicle" />
+          <option value="project.beverage" />
+          <option value="hardware.Hardware" />
+          <option value="project.*" />
+          <option value="test.test_mammal.mammal" />
+          <option value="COMPANIES" />
+          <option value="object.dispatch" />
+          <option value="cakes.main.forms.TYPES" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+        <div class="items-container">
+            <div class="item">
+                <h1>Welcome To Recipes Book</h1>
+                <h2>About us</h2>
+                <div class="recipe-info">
+                    <h3>Recipes Book is a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. We’re supported by a group of recipe developers, food writers, recipe and product testers, photographers, and other creative professionals.</h3>
+                </div>
+                <div class="buttons-container">
+                    <a class="button login" href="{% url 'login user' %}">Login</a>
+                    <a class="button register" href="{% url 'register' %}">Register</a>
+                </div>
+            </div>
+
+        </div>
+
+{% endblock %}

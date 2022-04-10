@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<div class="items-container">
+    <div class="item">
+        <h1>Create A Recipe</h1>
+        <form method="POST" action="{% url 'create recipe' %}">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</div>
+{% endblock %}
